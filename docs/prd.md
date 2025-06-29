@@ -38,6 +38,18 @@ Mevcut özgeçmiş formatlarımın 30 yıllık geniş ve çeşitli deneyimimi ta
 | Date | Version | Description | Author |
 | :--- | :------ | :---------- | :----- |
 | 2025-06-29 | 1.0     | PRD dökümanı analiz edildi ve güncellenmeye başlandı. | BMAD Master Orchestrator |
+## Stakeholder Analysis
+
+- **Tolga Karataş (Ürün Sahibi/Konu Uzmanı):** Projenin vizyonunu belirler, içerik sağlar ve nihai kararları verir.
+    - **Beklentiler:** Deneyimini en iyi şekilde yansıtan, profesyonel ve etkili bir platform.
+- **Potansiyel İşverenler/İşbirlikçiler (Ana Kullanıcılar):** Tolga'nın yetkinliklerini ve projelerini değerlendirir.
+    - **Beklentiler:** Kolay erişilebilir, anlaşılır, detaylı ve güvenilir bilgi.
+- **Geliştirme Ekibi (Uygulayıcılar):** Teknik gereksinimleri karşılar ve web sitesini geliştirir.
+    - **Beklentiler:** Net gereksinimler, teknik varsayımlar ve kısıtlamalar.
+- **Çeviri Ekibi (Destekleyici):** Web sitesi içeriğini farklı dillere çevirir.
+    - **Beklentiler:** Tutarlı ve doğru çeviri kılavuzları, yeterli bağlam.
+- **DevOps Ekibi (Destekleyici):** CI/CD süreçlerini ve deployment'ı yönetir.
+    - **Beklentiler:** Otomatikleştirilebilir, güvenli ve ölçeklenebilir altyapı.
 
 ## Requirements
 
@@ -95,6 +107,25 @@ WCAG 2.1 AA
 - Tablet
 - Mobil
 
+## Business Workflows / User Flows
+
+### Kullanıcı Akışı: Proje Detayını Görüntüleme
+
+1.  **Başlangıç:** Kullanıcı web sitesine erişir.
+2.  **Adım 1:** Kullanıcı ana sayfadaki "Projeler" bölümüne gider veya navigasyon menüsünden "Projeler" sayfasına tıklar.
+3.  **Adım 2:** Kullanıcı, öne çıkan projeler listesinden veya tüm projeler listesinden ilgilendiği bir projeyi seçer.
+4.  **Adım 3:** Kullanıcı seçilen projenin detay sayfasına yönlendirilir.
+5.  **Adım 4:** Kullanıcı, projenin amacını, kullanılan teknolojileri, elde edilen sonuçları ve ilgili bağlantıları inceler.
+6.  **Bitiş:** Kullanıcı proje detay sayfasını kapatır veya başka bir sayfaya geçer.
+
+### Kullanıcı Akışı: Yayın Detayını Görüntüleme
+
+1.  **Başlangıç:** Kullanıcı web sitesine erişir.
+2.  **Adım 1:** Kullanıcı navigasyon menüsünden "Yayınlar" sayfasına tıklar.
+3.  **Adım 2:** Kullanıcı, yayınlar listesinden ilgilendiği bir yayını seçer.
+4.  **Adım 3:** Kullanıcı seçilen yayının detay sayfasına yönlendirilir.
+5.  **Adım 4:** Kullanıcı, yayının amacını, ana konularını ve ilgili bağlantıları inceler.
+6.  **Bitiş:** Kullanıcı yayın detay sayfasını kapatır veya başka bir sayfaya geçer.
 ### User Personas
 
 - **Persona 1: Potansiyel İşveren Ayşe**
@@ -135,6 +166,35 @@ Statik site (Hugo)
 - Statik site yapısı nedeniyle dinamik kullanıcı etkileşimleri sınırlıdır.
 - İçerik güncellemeleri için manuel dosya düzenlemesi gereklidir (CMS entegrasyonu olmadığı sürece).
 - Büyük medya dosyaları için harici depolama çözümleri gerekebilir.
+## Data Requirements
+
+- **Projeler:**
+    - Başlık (Metin)
+    - Kısa Özet (Metin)
+    - Detaylı Açıklama (Markdown)
+    - Kullanılan Teknolojiler (Etiket Dizisi)
+    - Canlı Demo Bağlantısı (URL, isteğe bağlı)
+    - Kod Deposu Bağlantısı (URL, isteğe bağlı)
+    - Öne Çıkan Proje Durumu (Boolean)
+- **Yayınlar:**
+    - Başlık (Metin)
+    - Özet (Metin)
+    - Yayın Tarihi (Tarih)
+    - Orijinal Yayın Bağlantısı (URL)
+    - Ana Konular (Etiket Dizisi)
+- **Etkinlikler:**
+    - Başlık (Metin)
+    - Tarih (Tarih)
+    - Konum (Metin)
+    - Açıklama (Markdown)
+    - İlgili Bağlantı (URL, isteğe bağlı)
+
+## Business Rules
+
+- Ana sayfada en fazla 3 öne çıkan proje gösterilmelidir.
+- Yayınlar en yeniden en eskiye doğru sıralanmalıdır.
+- Tüm harici bağlantılar yeni bir sekmede açılmalıdır.
+- Mobil cihazlarda navigasyon menüsü katlanabilir (hamburger menü) olmalıdır.
 ## Epics
 
 - Epic1: İçerik zenginleştir
