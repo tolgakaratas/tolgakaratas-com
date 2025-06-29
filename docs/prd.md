@@ -20,33 +20,68 @@ Mevcut özgeçmiş formatlarımın 30 yıllık geniş ve çeşitli deneyimimi ta
 
 | Date | Version | Description | Author |
 | :--- | :------ | :---------- | :----- |
-|      |         |             |        |
+| 2025-06-29 | 1.0     | PRD dökümanı analiz edildi ve güncellenmeye başlandı. | BMAD Master Orchestrator |
 
 ## Requirements
 
 ### Functional
 
-- FRx: [Genel fonksiyonel gereksinim]
+- **FR1:** Proje portföyü, Tolga Karataş'ın projelerini, yayınlarını, etkinliklerini ve diğer ilgili içeriklerini sergilemelidir.
+- **FR2:** Kullanıcılar, projeler arasında kolayca gezinebilmeli ve her bir projenin detaylı açıklamasına erişebilmelidir.
+- **FR3:** Web sitesi, farklı cihazlarda (masaüstü, tablet, mobil) uyumlu bir şekilde görüntülenmelidir.
 
 ### Non Functional
 
-- NFRx: [Genel fonksiyonel olmayan gereksinim]
+- **NFR1:** Web sitesi hızlı yüklenmeli ve yüksek performans göstermelidir.
+- **NFR2:** Web sitesi güvenli olmalı ve kullanıcı verilerini korumalıdır.
+- **NFR3:** Web sitesi SEO (Arama Motoru Optimizasyonu) için optimize edilmelidir.
 
 ## User Interface Design Goals
 
 ### Overall UX Vision
+Kullanıcı dostu, sezgisel ve etkileyici bir deneyim sunmak.
+
 ### Key Interaction Paradigms
+- Kolay navigasyon
+- Hızlı erişim
+- Etkileşimli içerik
+
 ### Core Screens and Views
+- Ana Sayfa
+- Projeler Sayfası
+- Yayınlar Sayfası
+- Etkinlikler Sayfası
+- Hakkında Sayfası
+
 ### Accessibility: { None, WCAG, etc }
+WCAG 2.1 AA
+
 ### Branding
+- Profesyonel
+- Güvenilir
+- Yenilikçi
+
 ### Target Device and Platforms
+- Masaüstü
+- Tablet
+- Mobil
 
 ## Technical Assumptions
 
 ### Repository Structure: { Monorepo, Polyrepo, etc...}
+Monorepo
+
 ### Service Architecture
+Statik site (Hugo)
+
 ### Testing requirements
+- Birim testleri
+- Entegrasyon testleri
+- Uçtan uca testler
+
 ### Additional Technical Assumptions and Requests
+- CI/CD pipeline kurulacak.
+- Otomatik deployment yapılacak.
 
 ## Epics
 
@@ -91,5 +126,6 @@ so that Tolga Karataş'ın uzmanlığını ve somut başarılarını anlayarak, 
 
 ## Next Steps
 
-### Design Architect Prompt
-### Architect Prompt
+- Projelerin detaylı içeriklerini oluştur.
+- Web sitesini Türkçe ve Rusça'ya çevir.
+- CI/CD pipeline'ı kur.
