@@ -1,4 +1,4 @@
-# Tolga Karataş Proje Portföyü Ürün Gereksinimleri Belgesi (PRD)
+# Tolga Karataş Proje ve Yayın Portföyü Ürün Gereksinimleri Belgesi (PRD)
 
 ## Goals and Background Context
 
@@ -153,7 +153,24 @@ Statik site (Hugo)
 ### Additional Technical Assumptions and Requests
 - CI/CD pipeline kurulacak.
 - Otomatik deployment yapılacak.
-- Kullanılacak Teknolojiler: Hugo, Go (Hugo için), Markdown, HTML, CSS, JavaScript.
+
+### Technology Stack and Versions
+- Hugo: v0.120.0 veya üzeri
+- Go: 1.21 veya üzeri (Hugo modülleri için)
+- JavaScript: ES6+
+- CSS Framework: Bootstrap 5 (veya benzeri)
+
+### Coding Standards and Best Practices
+- Temiz Kod prensipleri uygulanacaktır.
+- Modüler ve yeniden kullanılabilir bileşenler geliştirilecektir.
+- Güvenlik açıkları için OWASP Top 10 prensipleri göz önünde bulundurulacaktır.
+- Kod incelemeleri (Code Reviews) zorunlu olacaktır.
+
+### Error Handling and Logging
+- Uygulama genelinde merkezi hata yakalama mekanizmaları kurulacaktır.
+- Kullanıcıya dostu hata mesajları gösterilecektir.
+- Sunucu tarafı hatalar için detaylı loglama (log seviyeleri: INFO, WARN, ERROR) yapılacaktır.
+- Loglar merkezi bir sistemde (örneğin, ELK Stack) toplanacaktır.
 
 ### Dependencies
 
@@ -218,18 +235,30 @@ so that Tolga Karataş'ın uzmanlığını ve somut başarılarını anlayarak, 
 
 #### Acceptance Criteria (ACs)
 
-1.  **FR1.1.1:** Web sitesi ana sayfasından veya "Projeler" bölümünden **belirlenmiş öne çıkan projelere** tam erişim sağlanmalıdır ve **diğer projeler özet olarak listelenmelidir**.
+1.  **FR1.1.1:** Web sitesi ana sayfasından veya "Projeler" bölümünden **belirlenmiş öne çıkan projelere** (maksimum 3 adet) tam erişim sağlanmalıdır ve **diğer projeler özet olarak listelenmelidir**.
 2.  **FR1.1.2:** **Öne çıkan her bir proje sayfası**, projenin amacını, kullanılan temel teknolojileri, elde edilen sonuçları ve varsa canlı demo veya kod deposu bağlantılarını içeren **kapsamlı ve zengin detayda** bilgi sunmalıdır. Diğer projeler için ise sadece başlık, kısa özet ve ilgili dış bağlantılar (varsa) gösterilmelidir.
-3.  **NFR1.1.3:** Proje detay sayfalarında yer alan tüm harici bağlantılar (örneğin GitHub, canlı demo linkleri) çalışır durumda olmalıdır.
-4.  **NFR1.1.4:** Kullanıcılar, proje sayfaları arasında sorunsuz gezinebilmelidir (Öne çıkan projelerin detay sayfaları ile proje listesi arasında ve genel proje listesi içinde).
-5.  **NFR1.1.5:** Proje detay sayfaları ve proje listeleri, mobil ve masaüstü cihazlarda tutarlı ve okunabilir bir şekilde görüntülenebilmelidir.
+3.  **NFR1.1.3 (Test Edilebilirlik):** Proje detay sayfalarında yer alan tüm harici bağlantılar (GitHub, canlı demo linkleri vb.) tıklanabilir olmalı ve ilgili hedefe başarıyla yönlendirmelidir (HTTP 200 OK).
+4.  **NFR1.1.4 (Kullanılabilirlik):** Kullanıcılar, proje sayfaları arasında sorunsuz gezinebilmelidir (Öne çıkan projelerin detay sayfaları ile proje listesi arasında ve genel proje listesi içinde). Geri ve ileri navigasyon tutarlı çalışmalıdır.
+5.  **NFR1.1.5 (Uyumluluk):** Proje detay sayfaları ve proje listeleri, yaygın kullanılan tüm modern tarayıcılarda (Chrome, Firefox, Safari, Edge) ve mobil/masaüstü cihazlarda (iOS, Android, Windows, macOS) tutarlı ve okunabilir bir şekilde görüntülenebilmelidir.
+6.  **NFR1.1.6 (Performans):** Proje detay sayfaları, ilk yüklemede 3 saniyenin altında yüklenmelidir (Lighthouse veya WebPageTest ile ölçülecektir).
+7.  **NFR1.1.7 (Negatif Senaryo):** Geçersiz bir proje ID'si ile erişim denendiğinde, kullanıcıya "Proje bulunamadı" gibi bilgilendirici bir hata mesajı gösterilmeli ve ana sayfa veya projeler listesine yönlendirilmelidir.
 
-#### Tasks / Subtasks
+#### Development Tasks
 
-- [ ] Görev 1.1.1: Öne çıkan projeler için içerik dosyalarını (index.md) oluştur.
+- [ ] Görev 1.1.1: Öne çıkan projeler için Hugo içerik dosyalarını (index.md) oluştur ve gerekli meta verileri ekle.
 - [ ] Görev 1.1.2: Diğer projeler için kısa özet içeriklerini oluştur.
-- [ ] Görev 1.1.3: Hugo projesindeki 'projects' koleksiyonunun öne çıkan ve özet listeleme kurallarına uygun olduğundan emin ol.
-- [ ] Görev 1.1.4: Tüm harici bağlantıları test et.
+- [ ] Görev 1.1.3: Hugo şablonlarında (layouts) 'projects' koleksiyonunun öne çıkan ve özet listeleme kurallarına uygun filtreleme ve sıralama mantığını uygula.
+- [ ] Görev 1.1.4: Proje detay sayfalarında canlı demo ve kod deposu bağlantılarını dinamik olarak render et.
+- [ ] Görev 1.1.5: Geçersiz proje ID'si durumunda hata sayfasına yönlendirme veya hata mesajı gösterme mekanizmasını geliştir.
+
+#### QA Tasks
+
+- [ ] Test 1.1.1: Tüm öne çıkan projelerin ve diğer projelerin listeleme kurallarına uygunluğunu doğrula.
+- [ ] Test 1.1.2: Her bir proje detay sayfasının tüm cihazlarda ve tarayıcılarda doğru görüntülendiğini test et.
+- [ ] Test 1.1.3: Tüm harici bağlantıların (GitHub, canlı demo) çalışır durumda olduğunu ve doğru hedefe yönlendirdiğini doğrula (HTTP 200 OK).
+- [ ] Test 1.1.4: Proje detay sayfaları arasında ve proje listesi ile detay sayfaları arasında navigasyonun sorunsuz çalıştığını test et.
+- [ ] Test 1.1.5: Geçersiz proje ID'si ile erişim denendiğinde beklenen hata mesajının gösterildiğini ve yönlendirmenin doğru yapıldığını test et.
+- [ ] Test 1.1.6: Proje detay sayfalarının performans metriklerini (yükleme süresi) Lighthouse/WebPageTest ile ölç ve hedeflere uygunluğunu doğrula.
 
 ### Story 1.2 Yayınların detaylı gösterimi
 
@@ -241,20 +270,27 @@ so that Tolga Karataş'ın bilgi birikimini ve düşüncelerini anlayarak, ilgil
 
 1.  **FR1.2.1:** Web sitesi ana sayfasından veya "Yayınlar" bölümünden tüm yayınlara tam erişim sağlanmalıdır.
 2.  **FR1.2.2:** Her bir yayın sayfası, yayının amacını, ana konularını, ilgili bağlantıları (örneğin, orijinal yayın linki) ve varsa özetini içeren kapsamlı bilgi sunmalıdır.
-3.  **NFR1.2.3:** Yayın detay sayfalarında yer alan tüm harici bağlantılar çalışır durumda olmalıdır.
-4.  **NFR1.2.4:** Kullanıcılar, yayın sayfaları arasında sorunsuz gezinebilmelidir.
-5.  **NFR1.2.5:** Yayın detay sayfaları ve yayın listeleri, mobil ve masaüstü cihazlarda tutarlı ve okunabilir bir şekilde görüntülenebilmelidir.
+3.  **NFR1.2.3 (Test Edilebilirlik):** Yayın detay sayfalarında yer alan tüm harici bağlantılar (orijinal yayın linki vb.) tıklanabilir olmalı ve ilgili hedefe başarıyla yönlendirmelidir (HTTP 200 OK).
+4.  **NFR1.2.4 (Kullanılabilirlik):** Kullanıcılar, yayın sayfaları arasında sorunsuz gezinebilmelidir. Geri ve ileri navigasyon tutarlı çalışmalıdır.
+5.  **NFR1.2.5 (Uyumluluk):** Yayın detay sayfaları ve yayın listeleri, yaygın kullanılan tüm modern tarayıcılarda (Chrome, Firefox, Safari, Edge) ve mobil/masaüstü cihazlarda (iOS, Android, Windows, macOS) tutarlı ve okunabilir bir şekilde görüntülenebilmelidir.
+6.  **NFR1.2.6 (Performans):** Yayın detay sayfaları, ilk yüklemede 3 saniyenin altında yüklenmelidir (Lighthouse veya WebPageTest ile ölçülecektir).
+7.  **NFR1.2.7 (Negatif Senaryo):** Geçersiz bir yayın ID'si ile erişim denendiğinde, kullanıcıya "Yayın bulunamadı" gibi bilgilendirici bir hata mesajı gösterilmeli ve ana sayfa veya yayınlar listesine yönlendirilmelidir.
 
-#### Tasks / Subtasks
-#### Estimated Effort
-- S (Küçük)
+#### Development Tasks
 
-#### Dependencies
-- İçerik Ekibi'nin yayın detaylarını sağlaması.
+- [ ] Görev 1.2.1: Yayınlar için Hugo içerik dosyalarını (index.md) oluştur ve gerekli meta verileri ekle.
+- [ ] Görev 1.2.2: Hugo şablonlarında (layouts) 'publication' koleksiyonunun listeleme kurallarına uygun filtreleme ve sıralama mantığını uygula.
+- [ ] Görev 1.2.3: Yayın detay sayfalarında orijinal yayın bağlantılarını dinamik olarak render et.
+- [ ] Görev 1.2.4: Geçersiz yayın ID'si durumunda hata sayfasına yönlendirme veya hata mesajı gösterme mekanizmasını geliştir.
 
-- [ ] Görev 1.2.1: Yayınlar için içerik dosyalarını (index.md) oluştur.
-- [ ] Görev 1.2.2: Hugo projesindeki 'publication' koleksiyonunun listeleme kurallarına uygun olduğundan emin ol.
-- [ ] Görev 1.2.3: Tüm harici bağlantıları test et.
+#### QA Tasks
+
+- [ ] Test 1.2.1: Tüm yayınların listeleme kurallarına uygunluğunu doğrula.
+- [ ] Test 1.2.2: Her bir yayın detay sayfasının tüm cihazlarda ve tarayıcılarda doğru görüntülendiğini test et.
+- [ ] Test 1.2.3: Tüm harici bağlantıların (orijinal yayın linki) çalışır durumda olduğunu ve doğru hedefe yönlendirdiğini doğrula (HTTP 200 OK).
+- [ ] Test 1.2.4: Yayın detay sayfaları arasında ve yayın listesi ile detay sayfaları arasında navigasyonun sorunsuz çalıştığını test et.
+- [ ] Test 1.2.5: Geçersiz yayın ID'si ile erişim denendiğinde beklenen hata mesajının gösterildiğini ve yönlendirmenin doğru yapıldığını test et.
+- [ ] Test 1.2.6: Yayın detay sayfalarının performans metriklerini (yükleme süresi) Lighthouse/WebPageTest ile ölç ve hedeflere uygunluğunu doğrula.
 
 ## Epic 2 Türkçe tercümeleri yap
 
@@ -268,21 +304,25 @@ so that içeriği kendi dilimde anlayabilir ve Tolga Karataş'ın çalışmalar�
 
 #### Acceptance Criteria (ACs)
 
-1.  **FR2.1.1:** Web sitesinin tüm metin içerikleri (başlıklar, açıklamalar, menüler vb.) Türkçe'ye çevrilmelidir.
-2.  **FR2.1.2:** Türkçe ve İngilizce dil seçenekleri arasında kolayca geçiş yapılabilmelidir.
-3.  **NFR2.1.3:** Çeviriler dilbilgisi ve anlam bütünlüğü açısından doğru olmalıdır.
-4.  **NFR2.1.4:** Türkçe karakterler (ç, ğ, ı, ö, ş, ü) doğru bir şekilde görüntülenmelidir.
+1.  **FR2.1.1:** Web sitesinin tüm metin içerikleri (başlıklar, açıklamalar, menüler, proje/yayın/etkinlik detayları vb.) Türkçe'ye doğru ve eksiksiz bir şekilde çevrilmelidir.
+2.  **FR2.1.2:** Kullanıcılar, web sitesinin herhangi bir sayfasından Türkçe ve İngilizce dil seçenekleri arasında kolayca ve hızlı bir şekilde geçiş yapabilmelidir. Dil seçimi kalıcı olmalıdır (örneğin, çerezler aracılığıyla).
+3.  **NFR2.1.3 (Çeviri Kalitesi):** Türkçe çeviriler, dilbilgisi, yazım ve anlam bütünlüğü açısından yüksek kalitede olmalı, yerel kültüre uygun ve doğal bir akıcılık sunmalıdır. (Hedef: %95 doğruluk oranı, profesyonel çevirmen/yerel konuşmacı onayı).
+4.  **NFR2.1.4 (Karakter Desteği):** Türkçe'ye özgü karakterler (ç, ğ, ı, ö, ş, ü) tüm sayfalarda ve cihazlarda doğru bir şekilde görüntülenmelidir.
+5.  **NFR2.1.5 (Negatif Senaryo):** Desteklenmeyen bir dil seçeneği ile erişim denendiğinde, varsayılan dile (Türkçe veya İngilizce) yönlendirme yapılmalı veya uygun bir hata mesajı gösterilmelidir.
 
-#### Tasks / Subtasks
-#### Estimated Effort
-- L (Büyük)
+#### Development Tasks
 
-#### Dependencies
-- İçerik Ekibi'nin tüm içeriği tamamlaması.
+- [ ] Görev 2.1.1: Tüm içerik dosyalarının (projeler, yayınlar, etkinlikler, hakkında vb.) Türkçe versiyonlarını oluştur.
+- [ ] Görev 2.1.2: Hugo çoklu dil yapılandırmasını (config.toml veya hugo.yaml) Türkçe için ayarla.
+- [ ] Görev 2.1.3: Dil seçimi için kullanıcı arayüzü bileşenini (örneğin, dil değiştirici) geliştir.
 
-- [ ] Görev 2.1.1: Tüm içerik dosyalarının Türkçe versiyonlarını oluştur.
-- [ ] Görev 2.1.2: Hugo çoklu dil yapılandırmasını ayarla.
-- [ ] Görev 2.1.3: Çevirileri gözden geçir ve düzelt.
+#### QA Tasks
+
+- [ ] Test 2.1.1: Web sitesinin tüm metin içeriklerinin Türkçe'ye doğru ve eksiksiz çevrildiğini doğrula.
+- [ ] Test 2.1.2: Türkçe ve İngilizce dil seçenekleri arasında sorunsuz ve hızlı geçiş yapıldığını test et. Dil seçiminin kalıcı olduğunu doğrula.
+- [ ] Test 2.1.3: Türkçe çevirilerin dilbilgisi, yazım ve anlam bütünlüğü açısından kalitesini doğrula.
+- [ ] Test 2.1.4: Türkçe'ye özgü karakterlerin tüm sayfalarda ve cihazlarda doğru görüntülendiğini test et.
+- [ ] Test 2.1.5: Desteklenmeyen bir dil seçeneği ile erişim denendiğinde beklenen hata mesajının/yönlendirmenin doğru yapıldığını test et.
 
 ## Epic 3 Rusça tercümeleri yap
 
@@ -296,23 +336,28 @@ so that içeriği kendi dilimde anlayabilir ve Tolga Karataş'ın çalışmalar�
 
 #### Acceptance Criteria (ACs)
 
-1.  **FR3.1.1:** Web sitesinin tüm metin içerikleri (başlıklar, açıklamalar, menüler vb.) Rusça'ya çevrilmelidir.
-2.  **FR3.1.2:** Türkçe, İngilizce ve Rusça dil seçenekleri arasında kolayca geçiş yapılabilmelidir.
-3.  **NFR3.1.3:** Çeviriler dilbilgisi ve anlam bütünlüğü açısından doğru olmalıdır.
-4.  **NFR3.1.4:** Rusça karakterler doğru bir şekilde görüntülenmelidir.
+1.  **FR3.1.1:** Web sitesinin tüm metin içerikleri (başlıklar, açıklamalar, menüler, proje/yayın/etkinlik detayları vb.) Rusça'ya doğru ve eksiksiz bir şekilde çevrilmelidir.
+2.  **FR3.1.2:** Kullanıcılar, web sitesinin herhangi bir sayfasından Türkçe, İngilizce ve Rusça dil seçenekleri arasında kolayca ve hızlı bir şekilde geçiş yapabilmelidir. Dil seçimi kalıcı olmalıdır (örneğin, çerezler aracılığıyla).
+3.  **NFR3.1.3 (Çeviri Kalitesi):** Rusça çeviriler, dilbilgisi, yazım ve anlam bütünlüğü açısından yüksek kalitede olmalı, yerel kültüre uygun ve doğal bir akıcılık sunmalıdır. (Hedef: %95 doğruluk oranı, profesyonel çevirmen/yerel konuşmacı onayı).
+4.  **NFR3.1.4 (Karakter Desteği):** Rusça karakterler tüm sayfalarda ve cihazlarda doğru bir şekilde görüntülenmelidir.
+5.  **NFR3.1.5 (Negatif Senaryo):** Desteklenmeyen bir dil seçeneği ile erişim denendiğinde, varsayılan dile (Türkçe veya İngilizce) yönlendirme yapılmalı veya uygun bir hata mesajı gösterilmelidir.
 
-#### Tasks / Subtasks
-#### Estimated Effort
-- L (Büyük)
+#### Development Tasks
 
-#### Dependencies
-- İçerik Ekibi'nin tüm içeriği tamamlaması.
-- Türkçe çevirinin tamamlanması.
+- [ ] Görev 3.1.1: Tüm içerik dosyalarının (projeler, yayınlar, etkinlikler, hakkında vb.) Rusça versiyonlarını oluştur.
+- [ ] Görev 3.1.2: Hugo çoklu dil yapılandırmasını (config.toml veya hugo.yaml) Rusça için ayarla.
+- [ ] Görev 3.1.3: Dil seçimi için kullanıcı arayüzü bileşenini (örneğin, dil değiştirici) Rusça seçeneğini içerecek şekilde güncelle.
 
-- [ ] Görev 3.1.1: Tüm içerik dosyalarının Rusça versiyonlarını oluştur.
-- [ ] Görev 3.1.2: Hugo çoklu dil yapılandırmasını Rusça için ayarla.
-- [ ] Görev 3.1.3: Çevirileri gözden geçir ve düzelt.
+#### QA Tasks
+
+- [ ] Test 3.1.1: Web sitesinin tüm metin içeriklerinin Rusça'ya doğru ve eksiksiz çevrildiğini doğrula.
+- [ ] Test 3.1.2: Türkçe, İngilizce ve Rusça dil seçenekleri arasında sorunsuz ve hızlı geçiş yapıldığını test et. Dil seçiminin kalıcı olduğunu doğrula.
+- [ ] Test 3.1.3: Rusça çevirilerin dilbilgisi, yazım ve anlam bütünlüğü açısından kalitesini doğrula.
+- [ ] Test 3.1.4: Rusça karakterlerin tüm sayfalarda ve cihazlarda doğru görüntülendiğini test et.
+- [ ] Test 3.1.5: Desteklenmeyen bir dil seçeneği ile erişim denendiğinde beklenen hata mesajının/yönlendirmenin doğru yapıldığını test et.
 ## Checklist Results Report
+
+Bu bölüm, her bir hikaye veya epik için tamamlanan testlerin, kalite kontrollerinin ve kabul kriteri doğrulamalarının özetini içerecektir. Test senaryolarının durumu (geçti/kaldı), bulunan hatalar ve çözümleri burada takip edilecektir.
 
 ## Next Steps
 
