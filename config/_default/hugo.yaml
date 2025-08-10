@@ -6,7 +6,7 @@
 # Website name
 title: Tolga Karataş
 # Website URL
-baseURL: 'https://tolgakaratas.netlify.app/'
+baseURL: 'https://tolgakaratas.com/'
 
 ############################
 ## LANGUAGE
@@ -16,6 +16,80 @@ defaultContentLanguage: en
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: false
 removePathAccents: true
+
+menus:
+  main:
+    - name: "Bio"
+      url: "/"
+      weight: 10
+    - name: "Papers"
+      url: "/#papers"
+      weight: 11
+    - name: "Talks"
+      url: "/#talks"
+      weight: 12
+    - name: "News"
+      url: "/#news"
+      weight: 13
+    - name: "Experience"
+      url: "experience/"
+      weight: 20
+    - name: "Projects"
+      url: "projects/"
+      weight: 30
+    - name: "Teaching"
+      url: "teaching/"
+      weight: 40
+
+languages:
+  tr:
+    menus:
+      main:
+        - name: "Hakkımda"
+          url: "/"
+          weight: 10
+        - name: "Yayınlar"
+          url: "/#papers"
+          weight: 11
+        - name: "Konuşmalar"
+          url: "/#talks"
+          weight: 12
+        - name: "Haberler"
+          url: "/#news"
+          weight: 13
+        - name: "Deneyim"
+          url: "experience/"
+          weight: 20
+        - name: "Projeler"
+          url: "proje/"
+          weight: 30
+        - name: "Eğitim"
+          url: "teaching/"
+          weight: 40
+  ru:
+    menus:
+      main:
+        - name: "Обо мне"
+          url: "/"
+          weight: 10
+        - name: "Публикации"
+          url: "/#papers"
+          weight: 11
+        - name: "Выступления"
+          url: "/#talks"
+          weight: 12
+        - name: "Новости"
+          url: "/#news"
+          weight: 13
+        - name: "Опыт"
+          url: "opyt/"
+          weight: 20
+        - name: "Проекты"
+          url: "proekt/"
+          weight: 30
+        - name: "Обучение"
+          url: "obuchenie/"
+          weight: 40
 
 ############################
 ## ADVANCED

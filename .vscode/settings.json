@@ -1,0 +1,14 @@
+{
+    "cSpell.overrides": [
+        // // Force `*.hrr` and `*.crr` files to be treated as `cpp` files:
+        // {
+        //     "filename": "**/{*.hrr,*.crr}",
+        //     "languageId": "cpp"
+        // },
+        // Force `tr/**/*.md` to be treated as Turkish (dictionary needs to be installed separately):
+        {
+            "filename": "**/tr/**/*.md",
+            "language": "tr"
+        }
+    ]
+}

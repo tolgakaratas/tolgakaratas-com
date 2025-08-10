@@ -1,0 +1,14 @@
+- id: bio
+  translation: "Hakkımda"
+- id: papers
+  translation: "Yayınlar"
+- id: talks
+  translation: "Konuşmalar"
+- id: news
+  translation: "Haberler"
+- id: experience
+  translation: "Deneyim"
+- id: projects
+  translation: "Projeler"
+- id: teaching
+  translation: "Eğitim"

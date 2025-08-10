@@ -222,6 +222,215 @@ Statik site (Hugo)
 - İçerik Ekibi'nin proje detaylarını sağlaması.
 - Epic2: Türkçe tercümeleri yap
 - Epic3: Rusça tercümeleri yap
+- Epic4: İçerik Stratejisi ve Üretimi
+- Epic5: "Türkçe Düşün, Yapay Zeka Üretsin" Kitabının Yayınlanması
+- Epic6: Kapsamlı İçerik Zenginleştirme ve İmaj Geliştirme
+- Epic7: Yeni İçerik Türlerinin Entegrasyonu ve Stratejisi
+- Epic8: Çok Dilli İçerik ve Menü Tutarlılığı
+- Epic9: "Türkçe Düşün, Yapay Zeka Üretsin" Kitabı Formatının İyileştirilmesi
+
+## Epic 6: Kapsamlı İçerik Zenginleştirme ve İmaj Geliştirme
+
+**Goal:** Tolga Karataş'ın web sitesindeki tüm içeriklerin (projeler, yayınlar, blog yazıları, hakkında sayfaları) PDF'teki detaylarla zenginleştirilmesi, görsel öğelerle desteklenmesi ve imajının en üst düzeye çıkarılması.
+
+### Story 6.1: Yazar Profillerinin ve "Hakkımda" Sayfalarının Detaylandırılması
+
+**As a** site ziyaretçisi,
+**I want** Tolga Karataş'ın profesyonel geçmişi ve uzmanlık alanları hakkında PDF'teki detaylarla zenginleştirilmiş, kapsamlı ve etkileyici bilgilere erişebilmek,
+**so that** onun yetkinliklerini ve somut başarılarını daha iyi anlayabilirim.
+
+#### Acceptance Criteria (ACs)
+
+1.  **AC6.1.1:** PDF'teki "ÇALIŞMA HAYATI" ve "AKADEMİK KARİYERİ" bölümlerindeki detaylar (UNIDO projesi, 5 ülkedeki yazılım geliştirme ekipleri koordinasyonu, ders verdiği üniversiteler, ders konuları) yazar profillerine ve "Hakkımda" sayfalarına (tüm dillerde) entegre edilmelidir.
+2.  **AC6.1.2:** "Araştırmacı İş İnsanı" rolünü destekleyen somut başarılar (örn. ASIDEES projesi) vurgulanmalıdır.
+3.  **AC6.1.3:** Kariyer yolculuğunu veya uzmanlık alanlarının gelişimini gösteren basit bir zaman çizelgesi (timeline) veya beceri haritası (skill map) Mermaid ile eklenmelidir.
+
+#### Development Tasks
+
+- [ ] Görev 6.1.1: `content/en/authors/tolga/_index.md`, `content/tr/authors/tolga/_index.md` ve `content/ru/authors/tolga/_index.md` dosyalarını PDF'teki bilgilerle güncelle.
+- [ ] Görev 6.1.2: İlgili sayfalara Mermaid ile zaman çizelgesi veya beceri haritası ekle.
+
+#### QA Tasks
+
+- [ ] Test 6.1.1: Güncellenen yazar profillerinin ve "Hakkımda" sayfalarının tüm dillerde PDF'teki bilgileri doğru ve eksiksiz içerdiğini doğrula.
+- [ ] Test 6.1.2: Mermaid görsellerinin doğru görüntülendiğini ve bilgiyi desteklediğini doğrula.
+
+### Story 6.2: Proje Sayfalarının Detaylandırılması ve Görselleştirilmesi
+
+**As a** site ziyaretçisi,
+**I want** Tolga Karataş'ın projeleri hakkında PDF'teki detaylarla zenginleştirilmiş, somut başarıları vurgulayan ve görsel öğelerle desteklenmiş bilgilere erişebilmek,
+**so that** projelerin kapsamını, etkisini ve Tolga Karataş'ın katkılarını daha iyi anlayabilirim.
+
+#### Acceptance Criteria (ACs)
+
+1.  **AC6.2.1:** PDF'teki "TİCARİ FAALİYETLERİ" ve "DEVAM EDEN PROJELERİ" bölümlerindeki bilgilerle mevcut proje açıklamaları zenginleştirilmelidir.
+2.  **AC6.2.2:** "Denomas Denetim Otomasyon" yazılımının "ithal ikame ürün olarak sanayi bakanlığı, ticaret odası, üniversite ve teknopark heyetleri tarafından onaylanan, tescil edilen yerli malı belgeli sektördeki ilk ve tek yazılım platformu" olduğu bilgisi gibi somut başarı ve tescil detayları ilgili proje sayfalarına eklenmelidir.
+3.  **AC6.2.3:** Her projenin iş akışını, mimarisini veya etki alanını gösteren basit akış şemaları (flowchart) veya bileşen diyagramları (component diagram) Mermaid ile eklenmelidir.
+
+#### Development Tasks
+
+- [ ] Görev 6.2.1: İlgili proje sayfalarını PDF'teki bilgilerle güncelle.
+- [ ] Görev 6.2.2: Proje sayfalarına Mermaid diyagramları ekle.
+
+#### QA Tasks
+
+- [ ] Test 6.2.1: Güncellenen proje sayfalarının tüm dillerde PDF'teki bilgileri doğru ve eksiksiz içerdiğini doğrula.
+- [ ] Test 6.2.2: Mermaid diyagramlarının doğru görüntülendiğini ve bilgiyi desteklediğini doğrula.
+
+### Story 6.3: Yayın Sayfalarının Zenginleştirilmesi ve Ödüllerin Vurgulanması
+
+**As a** site ziyaretçisi,
+**I want** Tolga Karataş'ın yayınları hakkında PDF'teki ödül bilgileriyle zenginleştirilmiş ve görsel öğelerle desteklenmiş bilgilere erişebilmek,
+**so that** onun akademik ve profesyonel başarılarını daha iyi anlayabilirim.
+
+#### Acceptance Criteria (ACs)
+
+1.  **AC6.3.1:** PDF'teki "ÖDÜLLERİ" bölümünde yer alan "2017 yılında Kiev'de en iyi blockchain hackathon projesi ödülünü ekibiyle almıştır" bilgisinin ilgili yayın veya proje sayfasına eklenmesi.
+2.  **AC6.3.2:** "Görev aldığı güvenlik, akıllı şehircilik ve alt yapı yönetimi projeleri onlarca ödül almıştır" ifadesinin, bu projelerin detay sayfalarında veya ilgili yayınlarda somut örneklerle desteklenmesi.
+3.  **AC6.3.3:** Yayınların ana argümanlarını veya metodolojilerini özetleyen zihin haritaları (mind map) veya kavram haritaları (concept map) eklenmesi.
+
+#### Development Tasks
+
+- [ ] Görev 6.3.1: İlgili yayın ve proje sayfalarını PDF'teki ödül bilgileriyle güncelle.
+- [ ] Görev 6.3.2: Yayın sayfalarına Mermaid zihin haritaları veya kavram haritaları ekle.
+
+#### QA Tasks
+
+- [ ] Test 6.3.1: Güncellenen yayın sayfalarının tüm dillerde PDF'teki bilgileri doğru ve eksiksiz içerdiğini doğrula.
+- [ ] Test 6.3.2: Mermaid görsellerinin doğru görüntülendiğini ve bilgiyi desteklediğini doğrula.
+
+### Story 6.4: İçeriklerin Görsel Öğelerle Zenginleştirilmesi
+
+**As a** site ziyaretçisi,
+**I want** web sitesindeki karmaşık teknik konuların görsel öğelerle (Mermaid diyagramları, zihin haritaları vb.) desteklenerek daha anlaşılır hale getirilmesini,
+**so that** bilgiyi daha kolay kavrayabilir ve Tolga Karataş'ın uzmanlığını daha net görebilirim.
+
+#### Acceptance Criteria (ACs)
+
+1.  **AC6.4.1:** Karmaşık teknik konuları açıklamak için tüm proje ve yayın sayfalarına akış şemaları, mimari diyagramlar veya süreç adımlarını gösteren görsellerin (Mermaid) yaygınlaştırılması.
+2.  **AC6.4.2:** "UZMANLIK ALANLARI" ve "DEVAM EDEN PROJELER" gibi bölümlerdeki kavramları açıklamak için akış şemaları, mimari diyagramlar veya süreç adımlarını gösteren görsellerin kullanılması.
+
+#### Development Tasks
+
+- [ ] Görev 6.4.1: Belirlenen sayfalara uygun Mermaid diyagramları ekle.
+
+#### QA Tasks
+
+- [ ] Test 6.4.1: Eklenen tüm görsellerin doğru görüntülendiğini ve içeriği desteklediğini doğrula.
+
+## Epic 7: Yeni İçerik Türlerinin Entegrasyonu ve Stratejisi
+
+**Goal:** Web sitesine kitaplar, rehberler ve yeni blog serileri gibi yeni içerik türlerinin entegre edilmesi ve bu içeriklerin stratejik olarak konumlandırılması.
+
+### Story 7.1: "Uzmanlık Alanları" Rehber Serilerinin Oluşturulması
+
+**As a** site ziyaretçisi,
+**I want** Tolga Karataş'ın uzmanlık alanlarına yönelik (Siber güvenlik, stratejik güvenlik, uluslararası uyum standartları vb.) detaylı rehber serilerine erişebilmek,
+**so that** bu konularda derinlemesine bilgi edinebilir ve Tolga Karataş'ın düşünce liderliğini takip edebilirim.
+
+#### Acceptance Criteria (ACs)
+
+1.  **AC7.1.1:** PDF'teki "UZMANLIK ALANLARI" bölümündeki her bir uzmanlık alanı için ayrı bir rehber veya blog serisi oluşturulmalıdır.
+2.  **AC7.1.2:** Bu rehberlerin "Guide" formatında yeni sayfalar olarak eklenmesi.
+
+#### Development Tasks
+
+- [ ] Görev 7.1.1: Her uzmanlık alanı için yeni içerik dosyaları (Markdown) oluştur.
+- [ ] Görev 7.1.2: Bu içerikleri "Guide" formatına uygun şekilde yapılandır.
+
+#### QA Tasks
+
+- [ ] Test 7.1.1: Oluşturulan rehber serilerinin doğru görüntülendiğini ve içeriğin tutarlı olduğunu doğrula.
+
+### Story 7.2: Devam Eden Projeler İçin Yeni Sayfaların Oluşturulması
+
+**As a** site ziyaretçisi,
+**I want** Tolga Karataş'ın devam eden projeleri hakkında bilgi edinebilmek,
+**so that** onun güncel çalışmalarını takip edebilir ve potansiyel işbirlikleri için fikir edinebilirim.
+
+#### Acceptance Criteria (ACs)
+
+1.  **AC7.2.1:** PDF'te belirtilen "Yönetim Otomasyon Yazılımları", "Güvenlik Otomasyon Yazılımları", "Veri Analiz Yazılımları", "Finansal Risk Analiz Yazılımları" gibi devam eden projeler için ayrı proje sayfaları oluşturulmalıdır.
+2.  **AC7.2.2:** Bu sayfaların mevcut projeler gibi detaylandırılması.
+
+#### Development Tasks
+
+- [ ] Görev 7.2.1: Her devam eden proje için yeni içerik dosyaları (Markdown) oluştur.
+- [ ] Görev 7.2.2: Bu içerikleri mevcut proje şablonlarına uygun şekilde detaylandır.
+
+#### QA Tasks
+
+- [ ] Test 7.2.1: Oluşturulan devam eden proje sayfalarının doğru görüntülendiğini ve içeriğin tutarlı olduğunu doğrula.
+
+## Epic 8: Çok Dilli İçerik ve Menü Tutarlılığı
+
+**Goal:** Web sitesindeki tüm içeriklerin ve menülerin üç dilde (Türkçe, İngilizce, Rusça) tam ve tutarlı çevirilerinin sağlanması.
+
+### Story 8.1: Tüm İçeriklerin Detaylı ve Tutarlı Çevirilerinin Sağlanması
+
+**As a** site ziyaretçisi,
+**I want** web sitesindeki tüm içerikleri (projeler, yayınlar, blog yazıları, hakkında sayfaları) kendi dilimde (Türkçe, İngilizce, Rusça) tam ve detaylı olarak okuyabilmek,
+**so that** bilgiyi eksiksiz ve doğru bir şekilde anlayabilirim.
+
+#### Acceptance Criteria (ACs)
+
+1.  **AC8.1.1:** PDF'teki tüm bilgilerin (özellikle "Hakkımda" ve proje/yayın detayları) her üç dilde de tam ve eksiksiz olarak yer aldığından emin olunması.
+2.  **AC8.1.2:** Çevirilerin sadece kelime bazında değil, anlam ve bağlam açısından da tutarlı olması.
+
+#### Development Tasks
+
+- [ ] Görev 8.1.1: Tüm mevcut içerik dosyalarını (projeler, yayınlar, blog yazıları, yazar profilleri) üç dildeki çevirilerini kontrol et ve eksik/hatalı kısımları tamamla.
+
+#### QA Tasks
+
+- [ ] Test 8.1.1: Tüm dillerdeki içeriklerin detay ve kapsam açısından tutarlı olduğunu doğrula.
+- [ ] Test 8.1.2: Çevirilerin dilbilgisi ve anlam bütünlüğü açısından kalitesini doğrula.
+
+### Story 8.2: Çok Dilli Menü Çevirilerinin Kontrolü ve Düzeltilmesi
+
+**As a** site ziyaretçisi,
+**I want** web sitesindeki menülerin kendi dilimde (Türkçe, İngilizce, Rusça) doğru ve tutarlı bir şekilde görüntülenmesini,
+**so that** sitede kolayca gezinebilirim.
+
+#### Acceptance Criteria (ACs)
+
+1.  **AC8.2.1:** `config/_default/menus.yaml` ve diğer dil-spesifik menü yapılandırmalarının kontrol edilmesi.
+2.  **AC8.2.2:** Türkçe ve Rusça menü çevirilerinin düzgün olduğunun doğrulanması ve gerekli düzeltmelerin yapılması.
+
+#### Development Tasks
+
+- [ ] Görev 8.2.1: `config/_default/menus.yaml` ve ilgili dil dosyalarını incele.
+- [ ] Görev 8.2.2: Menü çevirilerindeki hataları düzelt.
+
+#### QA Tasks
+
+- [ ] Test 8.2.1: Tüm dillerdeki menülerin doğru görüntülendiğini ve navigasyonun sorunsuz çalıştığını doğrula.
+
+## Epic 9: "Türkçe Düşün, Yapay Zeka Üretsin" Kitabı Formatının İyileştirilmesi
+
+**Goal:** `content/en/publication/turkce-kodlama` altındaki sayfaların Hugo Blox'un "docs" (kitap) formatına uygun hale getirilerek okunaklılığının ve yerleşimlerinin iyileştirilmesi.
+
+### Story 9.1: `turkce-kodlama` Sayfalarının `type: docs` Formatına Dönüştürülmesi
+
+**As a** site ziyaretçisi,
+**I want** "Türkçe Düşün, Yapay Zeka Üretsin" kitabını web sitesinde kitap formatında (sol menüde bölümler, sayfa içi navigasyon vb.) kolayca okuyabilmek,
+**so that** içeriği daha düzenli ve kullanıcı dostu bir şekilde takip edebilirim.
+
+#### Acceptance Criteria (ACs)
+
+1.  **AC9.1.1:** `content/en/publication/turkce-kodlama` altındaki tüm `index.md` dosyalarının `frontmatter`'ına `type: docs` eklenmesi.
+2.  **AC9.1.2:** Gerekirse sayfaların yeniden düzenlenmesi veya taşınması (örneğin, `_index.md` ve bölüm klasörleri).
+3.  **AC9.1.3:** Hugo Blox'un "docs" özelliğinin tüm yeteneklerinin (sol menüde bölüm navigasyonu, önceki/sonraki sayfa düğmeleri vb.) kullanılması.
+
+#### Development Tasks
+
+- [ ] Görev 9.1.1: `content/en/publication/turkce-kodlama` altındaki `index.md` dosyalarını `type: docs` ile güncelle.
+- [ ] Görev 9.1.2: Kitap yapısına uygun olarak dosya ve klasör yapısını düzenle.
+
+#### QA Tasks
+
+- [ ] Test 9.1.1: Kitap sayfalarının "docs" formatında doğru görüntülendiğini ve navigasyonun çalıştığını doğrula.
+- [ ] Test 9.1.2: Sol menüde bölüm navigasyonunun ve önceki/sonraki sayfa düğmelerinin çalıştığını doğrula.
 
 ## Epic 1 İçerik Zenginleştir
 
@@ -355,6 +564,42 @@ so that içeriği kendi dilimde anlayabilir ve Tolga Karataş'ın çalışmalar�
 - [ ] Test 3.1.3: Rusça çevirilerin dilbilgisi, yazım ve anlam bütünlüğü açısından kalitesini doğrula.
 - [ ] Test 3.1.4: Rusça karakterlerin tüm sayfalarda ve cihazlarda doğru görüntülendiğini test et.
 - [ ] Test 3.1.5: Desteklenmeyen bir dil seçeneği ile erişim denendiğinde beklenen hata mesajının/yönlendirmenin doğru yapıldığını test et.
+
+## Epic 4: İçerik Stratejisi ve Üretimi
+
+Web sitesini bir düşünce liderliği platformuna dönüştürmek için mevcut içeriği zenginleştirmek ve stratejik yeni içerikler üretmek.
+
+### Story 4.1 Uzmanlık Alanlarına Yönelik Blog Yazıları Oluşturma
+
+As a site ziyaretçisi,
+I want Tolga Karataş'ın bilgi güvenliği, yapay zeka ve otomasyon gibi konulardaki uzmanlığını yansıtan derinlemesine blog yazılarını okumak,
+so that onun bilgi birikiminden faydalanabilir ve sektördeki yetkinliğini daha iyi anlayabilirim.
+
+#### Acceptance Criteria (ACs)
+1.  `docs/blog-yayinlama-plani.md`'de tanımlanan ana temalara uygun en az 5 yeni blog yazısı oluşturulmalıdır.
+2.  Her yazı, tanımlanan içerik standardına (front matter, body yapısı) uygun olmalıdır.
+3.  Yazılarda kullanılan görseller ve diyagramlar konuyu desteklemeli ve yüksek kalitede olmalıdır.
+
+### Story 4.2 Mevcut Proje ve Yayın Sayfalarını Zenginleştirme
+
+As a potansiyel işveren veya işbirlikçi,
+I want mevcut proje ve yayın sayfalarındaki "Lorem Ipsum" gibi yer tutucu metinler yerine, projenin amacını, kapsamını ve sonuçlarını detaylı anlatan zengin içerikler görmek,
+so that Tolga Karataş'ın geçmiş çalışmalarının somut etkisini ve değerini tam olarak değerlendirebilirim.
+
+#### Acceptance Criteria (ACs)
+1.  `content/project` ve `content/publication` altındaki tüm sayfalarda yer alan yer tutucu metinler kaldırılmalı ve özgün açıklamalarla değiştirilmelidir.
+2.  Her proje sayfası, projedeki rolü ve kişisel katkıları net bir şekilde açıklamalıdır.
+
+### Story 4.3 İçerikler Arası Bağlantı Ağı Kurma
+
+As a site kullanıcısı,
+I want bir blog yazısını okurken, o konuyla ilgili bir projeye veya akademik yayına kolayca geçiş yapabilmek,
+so that konular arasındaki bağlantıları keşfederek bütüncül bir anlayış geliştirebilirim.
+
+#### Acceptance Criteria (ACs)
+1.  Yeni oluşturulan her blog yazısında, ilgili en az bir proje veya yayına link verilmelidir.
+2.  Proje sayfalarından, o projeyle ilgili yazılmış blog yazılarına veya yayınlara linkler eklenmelidir.
+
 ## Checklist Results Report
 
 Bu bölüm, her bir hikaye veya epik için tamamlanan testlerin, kalite kontrollerinin ve kabul kriteri doğrulamalarının özetini içerecektir. Test senaryolarının durumu (geçti/kaldı), bulunan hatalar ve çözümleri burada takip edilecektir.
@@ -364,3 +609,38 @@ Bu bölüm, her bir hikaye veya epik için tamamlanan testlerin, kalite kontroll
 - Projelerin detaylı içeriklerini oluştur. (Sorumlu: İçerik Ekibi, Tahmini Bitiş: 2025-07-15)
 - Web sitesini Türkçe ve Rusça'ya çevir. (Sorumlu: Çeviri Ekibi, Tahmini Bitiş: 2025-08-30)
 - CI/CD pipeline'ı kur. (Sorumlu: DevOps Ekibi, Tahmini Bitiş: 2025-07-30)
+
+### Epic 5: "Türkçe Düşün, Yapay Zeka Üretsin" Kitabının Yayınlanması
+
+"Türkçe Düşün, Yapay Zeka Üretsin" adlı kitabın, web sitesinde bölümler halinde yayınlanarak okuyuculara sunulması.
+
+#### Story 5.1 Kitabın Bölümlere Ayrılıp Yayınlanması
+
+**As a** site ziyaretçisi,
+**I want** "Türkçe Düşün, Yapay Zeka Üretsin" kitabını web sitesi üzerinden online olarak, bölümler halinde okuyabilmek,
+**so that** gereksinim mühendisliği ve yapay zeka ile prompt üretimi konularındaki bu değerli kaynağa kolayca erişebilir ve kendi projelerimde bu bilgileri kullanabilirim.
+
+##### Acceptance Criteria (ACs)
+
+1.  **FR5.1.1:** `tum-kitap.md` dosyasındaki içerik, `content/tr/publication/turkce-dusun-yapay-zeka-uretsin` dizini altına, her bölüm için ayrı bir alt dizin oluşturularak bölünmelidir.
+2.  **FR5.1.2:** Her bölüm dizininin içinde, bölüm içeriğini barındıran bir `index.md` dosyası bulunmalıdır.
+3.  **FR5.1.3:** Kitabın ana giriş sayfası (`content/tr/publication/turkce-dusun-yapay-zeka-uretsin/_index.md`) oluşturulmalı ve tüm bölümlere buradan link verilmelidir.
+4.  **FR5.1.4:** Bölümler, menüde veya sayfada doğru sıralama ile (`weight` parametresi kullanılarak) gösterilmelidir.
+5.  **NFR5.1.5 (Uyumluluk):** Tüm kitap bölümleri, yaygın kullanılan tüm modern tarayıcılarda ve mobil/masaüstü cihazlarda tutarlı ve okunabilir bir şekilde görüntülenebilmelidir.
+6.  **NFR5.1.6 (Navigasyon):** Kullanıcılar, kitap bölümleri arasında (önceki/sonraki bölüm) kolayca gezinebilmelidir.
+
+##### Development Tasks
+
+- [ ] Görev 5.1.1: `tum-kitap.md` dosyasını oku ve içeriği manuel olarak bölümlere ayır.
+- [ ] Görev 5.1.2: Her bölüm için `content/tr/publication/turkce-dusun-yapay-zeka-uretsin/bolum-X` formatında dizinler oluştur.
+- [ ] Görev 5.1.3: Her bölüm içeriğini ilgili dizindeki `index.md` dosyasına yaz.
+- [ ] Görev 5.1.4: Hugo `front matter`'larının (title, weight vb.) her bölüm için doğru şekilde oluşturulduğundan emin ol.
+- [ ] Görev 5.1.5: Kitabın ana giriş sayfasını (`_index.md`) oluştur ve bölümlere linkleri ekle.
+
+##### QA Tasks
+
+- [ ] Test 5.1.1: Tüm bölümlerin doğru dizinlere ve dosyalara ayrıldığını doğrula.
+- [ ] Test 5.1.2: Her bölüm sayfasının içeriğinin eksiksiz ve doğru olduğunu kontrol et.
+- [ ] Test 5.1.3: Bölüm sıralamasının doğru olduğunu doğrula.
+- [ ] Test 5.1.4: Bölümler arası ve ana sayfaya geri navigasyonun çalıştığını test et.
+- [ ] Test 5.1.5: Tüm kitap sayfalarının farklı cihaz ve tarayıcılarda düzgün görüntülendiğini kontrol et.

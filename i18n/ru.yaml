@@ -1,0 +1,14 @@
+- id: bio
+  translation: "Обо мне"
+- id: papers
+  translation: "Публикации"
+- id: talks
+  translation: "Выступления"
+- id: news
+  translation: "Новости"
+- id: experience
+  translation: "Опыт"
+- id: projects
+  translation: "Проекты"
+- id: teaching
+  translation: "Обучение"

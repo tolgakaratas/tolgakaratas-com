@@ -1,0 +1,14 @@
+- id: bio
+  translation: "Bio"
+- id: papers
+  translation: "Papers"
+- id: talks
+  translation: "Talks"
+- id: news
+  translation: "News"
+- id: experience
+  translation: "Experience"
+- id: projects
+  translation: "Projects"
+- id: teaching
+  translation: "Teaching"
